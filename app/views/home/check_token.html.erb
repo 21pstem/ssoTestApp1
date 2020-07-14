@@ -1,0 +1,6 @@
+<div>
+  <h1>
+    This is to check a token
+  </h1>
+  <p><%= JWT.decode(session[:jwt_token], JWT_PASSWORD, true, algorithm: 'HS256') %></p>
+</div>
