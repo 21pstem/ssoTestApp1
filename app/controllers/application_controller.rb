@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
     unless @payload.nil?
       user = User.find_by_email @payload['email']
-      sign_out user
+      sign_out user if current_user.present? && user == current_user
     end
 
     false
@@ -31,5 +31,10 @@ class ApplicationController < ActionController::Base
     end
 
     @payload = token_data.nil? ? nil : token_data[0]
+    puts @payload.inspect
+  end
+
+  def after_sign_in_path_for(resource)
+    check_token_path
   end
 end
