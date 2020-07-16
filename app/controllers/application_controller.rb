@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
 
   def verify_token
     return true if is_valid_token?
-
+    
     unless @payload.nil?
       user = User.find_by_email @payload['email']
       sign_out user if current_user.present? && user == current_user
@@ -51,7 +51,7 @@ class ApplicationController < ActionController::Base
     end
 
     @payload = token_data.nil? ? nil : token_data[0]
-    @current_user = User.find_by_email(@payload['email'])
+    @current_user = @payload.nil? ? nil : User.find_by_email(@payload['email'])
   end
 
   def after_sign_in_path_for(resource)
