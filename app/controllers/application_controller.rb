@@ -26,9 +26,7 @@ class ApplicationController < ActionController::Base
 
   def verify_token
     return true if is_valid_token?
-
-    puts 'PAYLOAD INSPECT'
-    puts @payload.inspect
+    
     unless @payload.nil?
       user = User.find_by_email @payload['email']
       sign_out user if current_user.present? && user == current_user
