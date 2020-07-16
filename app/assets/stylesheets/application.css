@@ -13,3 +13,61 @@
  *= require_tree .
  *= require_self
  */
+
+.main-div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.title {
+  margin-bottom: 40px;
+}
+
+.sign-in-up-div {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  padding: 10px 15px 10px 15px;
+  background-color: beige;
+  border-radius: 15px;
+}
+
+.actions>input,
+.actions>button {
+  border-radius: 15px;
+  padding: 5px 15px 5px 15px;
+  border: none;
+}
+
+.login-div,
+.sign-up-div,
+.forgot-password-div {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.sign-up {
+  margin-bottom: 40px;
+}
+
+.links-div, .links-div > p {
+  margin-top: 40px;
+}
+
+.check-token-main-div {
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  margin-left: 40px;
+}

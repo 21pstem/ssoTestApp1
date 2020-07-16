@@ -1,17 +1,20 @@
-<div>
-  <h1>Session Logic</h1>
+<div class="main-div">
+  <h1 class="title" >Welcome to PARLO Tracker!</h1>
   <% if signed_in? %>
     <p>
       <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
     </p>
   <% else %>
-    <p>
-      <%= link_to 'Sign Up', new_user_registration_path %>
-    </p>
 
-    <p>
-      <%= link_to 'Sign In', new_user_session_path %>
-    </p>
+    <div class="sign-in-up-div" >
+      <p class="sign-up">
+        <%= link_to 'Sign Up', new_user_registration_path %>
+      </p>
+
+      <p>
+        <%= link_to 'Sign In', new_user_session_path %>
+      </p>
+    </div>
   <% end %>
 
   <br>
@@ -26,11 +29,9 @@
     <br>
     <hr>
 
-    <h1>
-      Intercomponent Link
-    </h1>
+    <h1>Link to Curriculum</h1>
     <p>
-      <%= intercomponent_link('3006 port app', 'http://localhost:3006/check-token') %>
+      <%= intercomponent_link('Go to Curriculum', 'http://localhost:3006/check-token') %>
     </p>
   <% end %>
 </div>
