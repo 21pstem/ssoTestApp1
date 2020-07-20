@@ -19,10 +19,4 @@ class SessionsController < Devise::SessionsController
     end
     respond_to_on_destroy
   end
-
-  private
-
-  def sso_headers(token)
-    { 'Authorization' => token }
-  end
 end

@@ -5,7 +5,7 @@ class RegistrationsController < Devise::RegistrationsController
     build_resource(sign_up_params)
 
     resource.save
-    yield resource if block_given?
+    yield(resource) if block_given?
     if resource.persisted?
       # This is the only difference between the default Devise create and our extended create
       perform_sso_signup if SSO_ENABLED
